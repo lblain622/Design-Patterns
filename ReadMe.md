@@ -1,10 +1,10 @@
 
-This project will focus on a resurant reservation system
+This project will focus on a resturant reservation system
 
 ## Features
 
 - **Make a Reservation**: Users can book a table by selecting the date, time, number of guests, and special requests.
-- **View & Manage Reservations**: Users can view, update, or cancel their reservations from a list.
+- **View & Manage Reservations**: Users can view, and process their reservations
 - **User-Friendly Interface**: A clean and easy-to-navigate interface for both desktop and mobile users.
 
 ## Design Patterns
