@@ -54,8 +54,8 @@ button:hover {
 
 #reservationHistory {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* At most 3 items in a row, each item at least 300px wide */
-    gap: 20px; /* Space between items */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
     padding: 20px;
     box-sizing: border-box;
 }

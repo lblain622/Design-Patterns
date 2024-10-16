@@ -52,15 +52,21 @@ class Restaurant {
                 this.reservations.splice(this.reservations.indexOf(reservation), 1);
                 this.completedReservations.push(reservation);
             } else if (reservation.getStatus() === 'Pending') {
+                if (reservation.partySize > this.maxTableSize) {
+                    console.log(`Sorry, we don't have tables for party size of ${reservation.partySize}`);
+                    reservation.cancel();
+                    this.handleCompletedReservation(reservation);
+                }else{
                 reservation.proceed(); // Move reservation from pending to confirmed
+                    }
             } else if (reservation.getStatus() === 'Seated') {
                 console.log(`${reservation.name} is already seated, processing...`);
                 reservation.proceed();
                 this.handleCompletedReservation(reservation);
-            } else if (reservation.partySize > this.maxTableSize) {
-                console.log(`Sorry, we don't have tables for party size ${reservation.partySize}`);
-                reservation.cancel();
-                this.handleCompletedReservation(reservation);
+            
+            }
+            else if (reservation.getStatus() == 'Done'){
+                this.reservations.splice(this.reservations.indexOf(reservation), 1);
             }
 
         });
@@ -77,7 +83,7 @@ findAvailableTable(partySize){
     return this.tables.find(table => table.isAvailable() && table.maxSize >= partySize);
 }
 
-// Handle completed reservations: remove from active tables and write to JSON file
+// Handle completed reservations
 handleCompletedReservation(reservation){
 
     let table = this.findTableByReservation(reservation);
@@ -88,7 +94,7 @@ handleCompletedReservation(reservation){
 
         this.reservations.splice(this.reservations.indexOf(reservation), 1);
         this.completedReservations.push(reservation);
-
+        console.log(this.completedReservations)
     }
 }
 }

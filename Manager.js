@@ -9,6 +9,7 @@ class Manager{
         this.builder.createTime(time);
         this.builder.createSpecial(special);
         this.builder.createParty(partySize);
+        this.builder.createStatus(new PendingState());
         return this.builder.createReservation();
 
     }

@@ -13,31 +13,35 @@ class ReservationBuilder{
 class ReservationManager extends ReservationBuilder{
     constructor(){
         super();
-        this.reservation = new Reservation();
+        this.name = "";
+        this.date = "";
+        this.time = "";
+        this.partySize = "";
+        this.special = "";
+        this.status = "";
+        
     }
 
     createName(name){
-        this.reservation.name = name;
+        this.name = name;
     }
     createTime(time){
-        this.reservation.time = time;
+        this.time = time;
     }
     createDate(date){
-        this.reservation.date = date;
+        this.date = date;
     }
     createParty(partySize){
-        this.reservation.partySize = partySize;
+        this.partySize = partySize;
     }
     createSpecial(special){
-        this.reservation.special = special;
+        this.special = special;
     }
     createStatus(status){
-        this.reservation.status = status;
+        this.status = status;
     }
-    getResult(){
-        print(this.reservation);
-    }
+    
     createReservation(){
-        return this.reservation;
+        return new Reservation(this.name,this.date,this.time,this.special,this.partySize,this.status);
     }
 }
