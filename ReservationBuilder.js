@@ -25,8 +25,8 @@ class ReservationManager extends ReservationBuilder{
     createDate(date){
         this.reservation.date = date;
     }
-    createParty(party){
-        this.reservation.party = party;
+    createParty(partySize){
+        this.reservation.partySize = partySize;
     }
     createSpecial(special){
         this.reservation.special = special;

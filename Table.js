@@ -6,7 +6,7 @@ class Table {
     }
 
     setReservation(reservation) {
-        if (reservation.guests <= this.maxSize) {
+        if (reservation.partySize <= this.maxSize) {
             this.reservation = reservation; // Assign reservation if guests fit
         } else {
             console.log(`Table ${this.id} can't fit ${reservation.guests} guests.`);

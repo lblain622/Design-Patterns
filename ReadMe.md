@@ -14,4 +14,4 @@ This project will focus on a resurant reservation system
 
 
 ## Class Diagram
- [![Class Diagram of the system](ResurantRes.drawio.png)]
+ [![Class Diagram of the system](ClassDiagram.drawio.png)]

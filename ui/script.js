@@ -2,6 +2,7 @@
 
 const restaurant = new Restaurant("Bistro");
 
+
 // Handle Reservation Form Submission
 const reservationForm = document.getElementById("reservationForm");
 const reservationList = document.getElementById("reservationList");
@@ -14,7 +15,7 @@ reservationForm.addEventListener("submit", function (e) {
     const time = document.getElementById("time").value;
     const partySize = document.getElementById("partySize").value;
     const special = document.getElementById("special").value;
-
+    
     restaurant.makeReservation(name, date, time, special, partySize);
 
     displayReservations();
@@ -27,9 +28,10 @@ reservationForm.addEventListener("submit", function (e) {
 function displayReservations() {
     reservationList.innerHTML = '';
 
-    restaurant.reservations.forEach((reservation, index) => {
+    restaurant.reservations.forEach((reservation) => {
         const div = document.createElement('div');
         div.className = 'reservation-item';
+       
         div.innerHTML = `
             <p><span>Name:</span> ${reservation.name}</p>
             <p><span>Date:</span> ${reservation.date}</p>
@@ -41,9 +43,29 @@ function displayReservations() {
     });
 }
 
+
 // Handle Process Reservations Button
 const processReservationsButton = document.getElementById("processReservations");
 processReservationsButton.addEventListener("click", function () {
-    restaurant.processReservations();
+    restaurant.processTables();
     displayReservations();
+    displayHistory();
 });
+
+function displayHistory() {
+    const historyList = document.getElementById("reservationHistory");
+    historyList.innerHTML = '';
+
+    restaurant.completedReservations.forEach((reservation) => {
+        const div = document.createElement('div');
+        div.className = 'reservation-item';
+        div.innerHTML = `
+            <p><span>Name:</span> ${reservation.name}</p>
+            <p><span>Date:</span> ${reservation.date}</p>
+            <p><span>Time:</span> ${reservation.time}</p>
+            <p><span>Party Size:</span> ${reservation.partySize}</p>
+            <p><span>Status:</span> ${reservation.getStatus()}</p>
+        `;
+        historyList.appendChild(div);
+    });
+}
