@@ -14,4 +14,7 @@ This project will focus on a resturant reservation system
 
 
 ## Class Diagram
- [![Class Diagram of the system](ClassDiagram.drawio.png)]
+ ![Class Diagram of the system](ClassDiagram.drawio.png)
+
+ ##Requirement Diagram
+ ![Requirement diagram of the system](requirements.drawio.png)
