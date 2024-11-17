@@ -1,5 +1,5 @@
 
-This project will focus on a resturant reservation system
+The Restaurant Reservation System is a software application designed to simplify and streamline the process of managing restaurant reservations. This system allows customers to book tables, view their existing reservations, and modify or cancel them as needed. Additionally, it provides tools to allow for useers to see who is currently seating and who can be seating next as resurvations are being processed.
 
 ## Features
 
